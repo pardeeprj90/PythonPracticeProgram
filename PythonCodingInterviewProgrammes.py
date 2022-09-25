@@ -54,6 +54,85 @@ def isPrime():
         else:
             print(f'Entered number {num1} is not a prime number')
 
+
 # isPrime()
 
-# P-3:- Check entered number is prime or not?
+# P-3:- Find the factorial of a number
+# Factorial of a number is the product of all the integers from 1 to that number. For example, the factorial of 7 is 1*2*3*4*5*6*7 = 5040
+
+# Facts
+# factorial of -ve doesn't exist
+# factorial of 0 is 1
+
+def findFactorial():
+    number1 = int(input("Please enter the number whose factorial needs to be identified:- "))
+    factorial = 1
+    if number1 < 0:
+        print(f'entered number {number1} is -ve so factorial can not be calculated')
+    elif number1 == 0:
+        print(f'Factorial of entered number {number1} is 1')
+    elif number1 > 0:
+        for i in range(1, number1 + 1):
+            factorial = factorial * i
+        print(f'Calculated factorial of entered number {number1} is {factorial}')
+
+
+# findFactorial()
+
+# Print Fibonacci series
+# Desc:-Fibonacci Sequence is the series of numbers, where each number in the series is the sum of two preceding numbers.0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ..
+
+def printFibonacciSeries():
+    num1 = int(input(f'Please enter the starting Range from where Fibonacci Series needs to be started:- '))
+    num2 = int(input(f'Please enter the starting Range from where Fibonacci Series needs to be Ended:- '))
+    for i in range(num1, num2):
+        addition = num1 + num2
+        print(addition)
+        num1 = num2
+        num2 = addition
+
+
+# printFibonacciSeries()
+
+# Swap 1st and last element of a list
+def swapList():
+    listNums = [1, 2, 3, 4]
+    print(f'Before swap list {listNums}')
+    size = len(listNums)
+    temp = listNums[0]
+    listNums[0] = listNums[size - 1]
+    listNums[size - 1] = temp
+    print(f'After swapping ist and last values of list {listNums}')
+
+
+# swapList()
+
+# Remove the occurrence of a word from a list
+
+def removeSpecificWordFromList():
+    value = list(map(str, input("Please enter multiple String values separated by a space:- ").split()))
+    print(value)
+    valueToBeRemoved = input(f'Please enter a string value from above list which needs to be removed:- ')
+    listElementCount = len(value)
+    if listElementCount > 0:
+        for i in range(0, listElementCount):
+            if value[i] == valueToBeRemoved:
+                del value[i]
+        print(value)
+    else:
+        print(f'Empty list {listElementCount}')
+
+
+# removeSpecificWordFromList()
+
+
+# Remove the occurrence of a word from a list
+
+def removeRepetitiveWordFromList():
+    value = list(map(str, input("Please enter multiple String values separated by a space:- ").split()))
+    _new_list = list(set(value))
+    # updated_list = [*_new_list]
+    print(_new_list)
+
+
+removeRepetitiveWordFromList()
